@@ -44,7 +44,8 @@ class Formatter:
                 if type(self.data) is date and hasattr(TimeFormat, piece):
                     raise TypeError(
                         "The format for date objects may not contain "
-                        "time-related format specifiers (found '%s')." % piece
+                        "time-related format specifiers "
+                        f"(found '{piece}')."
                     )
                 pieces.append(str(getattr(self, piece)()))
             elif piece:
