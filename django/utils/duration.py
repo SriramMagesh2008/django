@@ -21,7 +21,8 @@ def duration_string(duration):
 
     string = "{:02d}:{:02d}:{:02d}".format(hours, minutes, seconds)
     if days:
-        string = "{} ".format(days) + string
+        # Prepend days only when present, keeping output compact and consistent
+        string = f"{days} {string}"
     if microseconds:
         string += ".{:06d}".format(microseconds)
 
